@@ -1,12 +1,62 @@
-# React + Vite
+# Capital Swift Logistics Web App
+## Project Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Capital Swift Logistics is a web application built with React. The app allows users to:
 
-Currently, two official plugins are available:
+- View company information and services
+- Book deliveries
+- Track delivery status (Dashboard)
+- Register and login for personalized services
+- Contact the company easily
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The project uses JSX structure, with Tailwind CSS styling.
 
-## Expanding the ESLint configuration
+## Pages / Components
+### Pages
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Home – Landing page with logo, navigation, welcome message, and call-to-action buttons (Register / Login).
+
+- About – Company description, value proposition, and vision.
+
+- Services – Displays services offered with service cards and key features (Reliable, Fast, Affordable).
+
+- Contact – Contact form with Email, Full Name, Subject, Message, and action buttons (Submit, WhatsApp, Call).
+
+- Register – Registration form for new users (Username/Full Name, Password, Phone Number).
+
+- Login – User login page (Username/Email, Password).
+
+- Booking – Delivery booking form with Name, Email, Phone Number, Pickup & Delivery Address, Estimated Delivery Time & Cost.
+
+- Dashboard – Displays orders and delivery status; designed to fetch dynamic data from backend.
+
+### Components
+
+- Navbar – Logo and navigation links, visible on all pages.
+
+- Footer – Company info, quick links, contact info, and copyright, visible on all pages.
+
+## Project Structure
+
+src/
+├─ components/
+│  ├─ Navbar.jsx
+│  └─ Footer.jsx
+├─ pages/
+│  ├─ Home.jsx
+│  ├─ About.jsx
+│  ├─ Services.jsx
+│  ├─ Contact.jsx
+│  ├─ Register.jsx
+│  ├─ Login.jsx
+│  ├─ Booking.jsx
+│  └─ Dashboard.jsx
+├─ App.jsx
+└─ index.jsx
+
+## Features
+
+- React Router for seamless navigation between pages
+- Reusable Navbar and Footer components
+- Forms ready for backend integration
+- Dashboard ready to display dynamic delivery/order data
