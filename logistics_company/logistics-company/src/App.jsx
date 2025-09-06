@@ -9,12 +9,12 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Order from "./pages/Booking";
+import Booking from "./pages/Booking";
 import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
-    <Router>
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -27,7 +27,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       <Footer />
-    </Router>
+    </>
   );
 }
 
