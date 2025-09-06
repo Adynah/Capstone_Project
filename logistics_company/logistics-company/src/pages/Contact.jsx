@@ -4,17 +4,6 @@ import { Link } from "react-router-dom";
 function Contact() {
   return (
     <div>
-      <div>
-        <img src="/assets/CSLogo.jpg" alt="Logo" />
-      </div>
-
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
-
       <h1>Contact Us</h1>
 
       <form>
@@ -50,4 +39,4 @@ function Contact() {
   );
 }
 
-export default Contact
+export default Contact;

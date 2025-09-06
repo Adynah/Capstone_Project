@@ -4,17 +4,6 @@ import { Link } from "react-router-dom";
 function Services() {
   return (
     <div>
-      <div>
-        <img src="/assets/CSLogo.jpg" alt="Logo" />
-      </div>
-
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
-
       <h1>Our Services</h1>
       <ul>
         <li>Personal Errands</li>
@@ -34,4 +23,4 @@ function Services() {
   );
 }
 
-export default Services
+export default Services;

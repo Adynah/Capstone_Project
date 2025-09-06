@@ -4,10 +4,6 @@ import { Link } from "react-router-dom";
 function Login() {
   return (
     <div>
-      <div>
-        <img src="/assets/CSLogo.png" alt="Logo" />
-      </div>
-
       <h1>Login</h1>
 
       <form>
@@ -31,4 +27,4 @@ function Login() {
   );
 }
 
-export default Login
+export default Login;

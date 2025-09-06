@@ -4,18 +4,6 @@ import { Link } from "react-router-dom";
 function About() {
   return (
     <div>
-      <div>
-        <img src="/assets/CSLogo.jpg" alt="Logo" />
-        <span>Capital Swift Logistics</span>
-      </div>
-
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
-
       <h1>About</h1>
       <p>
         Capital Swift Logistics is an integrated logistics solution carved out of A and Ameh
@@ -50,4 +38,4 @@ function About() {
   );
 }
 
-export default About
+export default About;

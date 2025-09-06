@@ -4,10 +4,6 @@ import { Link } from "react-router-dom";
 function Register() {
   return (
     <div>
-      <div>
-        <img src="/assets/CSLogo.png" alt="Logo" />
-      </div>
-
       <h1>Register</h1>
 
       <form>
@@ -41,4 +37,4 @@ function Register() {
   );
 }
 
-export default Register
+export default Register;
