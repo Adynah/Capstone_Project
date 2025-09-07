@@ -11,4 +11,4 @@ class CustomUserAdmin(UserAdmin):
     list_display = ("username", "email", "phone", "role", "is_staff")
     fieldsets = UserAdmin.fieldsets + (
         (None, {'fields': ('role', 'phone', 'address')}),
-    )
+)
