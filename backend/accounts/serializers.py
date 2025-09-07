@@ -2,11 +2,13 @@ from rest_framework import serializers
 from .models import User
 from django.contrib.auth.password_validation import validate_password
 
+# For listing user info
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username', 'email', 'phone', 'role']
 
+# For registering new users
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
     password2 = serializers.CharField(write_only=True, required=True)
@@ -22,5 +24,6 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         validated_data.pop('password2')
+        # Django's create_user hashes the password automatically
         user = User.objects.create_user(**validated_data)
         return user
