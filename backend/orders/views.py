@@ -23,7 +23,7 @@ class BookingListView(generics.ListAPIView):
         else:
             qs = Booking.objects.filter(customer=user)
         
-        # filtering
+        # Filtering
         status = self.request.query_params.get('status')
         date = self.request.query_params.get('date')  # expects YYYY-MM-DD
 
