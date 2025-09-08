@@ -2,11 +2,19 @@ from rest_framework import serializers
 from .models import Booking
 from datetime import timedelta
 
+ALLOWED_STATUSES = ['pending', 'completed', 'in transit', 'delivered', 'cancelled']
+
 class BookingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Booking
         fields = [ 'id', 'order_id', 'delivery_name', 'delivery_phone', 'pickup_address', 'delivery_address', 'estimated_time', 'estimated_cost', 'status', 'date_created']
         read_only_fields = ['customer', 'id', 'order_id', 'status', 'date_created']
+    
+    # Ensure status is valid
+    def validate_status(self, value):
+        if value not in ALLOWED_STATUSES:
+            raise serializers.ValidationError(f"Status must be one of {ALLOWED_STATUSES}.")
+        return value
     
     # Validate estimated time
     def validate_estimated_time(self, value):
