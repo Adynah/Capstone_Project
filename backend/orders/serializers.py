@@ -1,22 +1,19 @@
 from rest_framework import serializers
 from .models import Booking
+from datetime import timedelta
 
 class BookingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Booking
-        fields = ['id', 'customer', 'pickup_address', 'delivery_address', 'estimated_time', 'estimated_cost', 'status', 'date_created']
-        read_only_fields = ['customer', 'status', 'date_created']
-    
-    # Validate quantity
-    def validate_quantity(self, value):
-        if value < 1:
-            raise serializers.ValidationError("Quantity must be at least 1")
-        return value
+        fields = [ 'delivery_name', 'delivery_phone', 'pickup_address', 'delivery_address', 'estimated_time', 'estimated_cost']
+        read_only_fields = ['customer', 'order_id', 'status', 'date_created']
     
     # Validate estimated time
     def validate_estimated_time(self, value):
-        if value <= 0:
-            raise serializers.ValidationError("Estimated time must be positive")
+        if not isinstance(value, timedelta):
+            raise serializers.ValidationError("Estimated time must be a valid duration (HH:MM:SS).")
+        if value.total_seconds() <= 0:
+            raise serializers.ValidationError("Estimated time must be greater than zero.")
         return value
 
     # Validate estimated cost
@@ -25,7 +22,7 @@ class BookingSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Estimated cost must be positive")
         return value
     
-    # Validate date 
+    # Validate data 
     def create(self, validated_data):
         validated_data['customer'] = self.context['request'].user
         return super().create(validated_data)
