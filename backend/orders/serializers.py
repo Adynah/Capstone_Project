@@ -5,8 +5,8 @@ from datetime import timedelta
 class BookingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Booking
-        fields = [ 'delivery_name', 'delivery_phone', 'pickup_address', 'delivery_address', 'estimated_time', 'estimated_cost']
-        read_only_fields = ['customer', 'order_id', 'status', 'date_created']
+        fields = [ 'id', 'order_id', 'delivery_name', 'delivery_phone', 'pickup_address', 'delivery_address', 'estimated_time', 'estimated_cost', 'status', 'date_created']
+        read_only_fields = ['customer', 'id', 'order_id', 'status', 'date_created']
     
     # Validate estimated time
     def validate_estimated_time(self, value):
